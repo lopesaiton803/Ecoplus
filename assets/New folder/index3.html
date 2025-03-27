@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Agronomia</title>
+  <style>
+    /* CONTAINER DO LOADING */
+    .agro-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* ANIMAÇÃO DE FOLHAS CRESCENDO */
+    .leaf-loader {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .leaf {
+      width: 30px;
+      height: 15px;
+      background: #5d9e47;
+      border-radius: 15px 15px 0 0;
+      animation: grow 1.5s infinite ease-in-out;
+      transform-origin: bottom center;
+    }
+    .leaf:nth-child(1) { animation-delay: 0.1s; }
+    .leaf:nth-child(2) { animation-delay: 0.3s; }
+    .leaf:nth-child(3) { animation-delay: 0.5s; }
+    @keyframes grow {
+      0%, 100% { transform: scaleY(0.3); }
+      50% { transform: scaleY(1.5); background: #8bc34a; }
+    }
+
+    /* TEXTO */
+    .agro-loader p {
+      color: #2e7d32;
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    /* BARRA DE PROGRESSO ESTILIZADA */
+    .progress-bar {
+      width: 200px;
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #4caf50, #8bc34a);
+      animation: progress 3s ease-in-out forwards;
+    }
+    @keyframes progress {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- LOADING -->
+  <div class="agro-loader" id="agroLoader">
+    <div class="leaf-loader">
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+    </div>
+    <p>Carregando sua conexão com a terra...</p>
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO DO SITE (EXEMPLO) -->
+  <div class="main-content">
+    <h1>Bem-vindo ao Site de Agronomia</h1>
+    <p>Conteúdo principal aqui...</p>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Remove o loading após 3 segundos (simulação)
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('agroLoader').style.display = 'none';
+      }, 3000);
+    });
+
+    // Caso queira remover apenas quando tudo estiver carregado:
+    // window.addEventListener('load', function() {
+    //   document.getElementById('agroLoader').style.display = 'none';
+    // });
+  </script>
+</body>
+</html>

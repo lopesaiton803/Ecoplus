@@ -1,0 +1,336 @@
+:root {
+    --primary-color: #2e7d32;
+    --primary-dark: #1b5e20;
+    --secondary-color: #81c784;
+    --accent-color: #ff8f00;
+    --accent-light: #ffc046;
+    --dark-color: #263238;
+    --light-color: #f5f5f5;
+    --text-color: #333;
+    --text-light: #777;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 150px 0;
+    position: relative;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-align: center;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+/* About Section - Enhanced */
+.about-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.about-content {
+    position: relative;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.about-content:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 5px 0 0 5px;
+}
+
+.about-highlight {
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    padding: 30px;
+    border-radius: 10px;
+    margin: 30px 0;
+    border-left: 3px solid var(--accent-color);
+}
+
+/* Mission & Vision Section with Overlay */
+.mission-vision-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-card, .vision-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    height: 100%;
+    position: relative;
+}
+
+.mission-card .card-img, .vision-card .card-img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.mission-card .card-img-overlay, .vision-card .card-img-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+}
+
+.mission-card .card-title, .vision-card .card-title {
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.mission-card .card-title:after, .vision-card .card-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+}
+
+/* Values Section - Enhanced with requested gradient bar */
+.values-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.value-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    height: 100%;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ajuste solicitado para os cards de valores */
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Team Section - Enhanced Small Cards with requested gradient bar */
+.team-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+/* Ajuste solicitado para a barra gradient acima da seção Team */
+.team-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px; /* Adicionado para compensar a barra gradient */
+}
+
+.team-header h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.team-header .subtitle {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.team-member {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.member-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    margin: 0 auto 20px;
+}
+
+.member-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.member-info .position {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 14px;
+}
+
+.member-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.member-social a {
+    width: 35px;
+    height: 35px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.member-social a:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* ESG Section - Enhanced */
+.esg-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+}
+
+.esg-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    height: 100%;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.esg-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.esg-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--accent-light);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-section {
+        padding: 120px 0;
+    }
+    
+    .about-content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 100px 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .about-highlight {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 80px 0;
+    }
+    
+    .member-img {
+        width: 100px;
+        height: 100px;
+    }
+}
