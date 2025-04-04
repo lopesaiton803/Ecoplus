@@ -12,47 +12,239 @@ Author URL: http://w3layouts.com
  */
 
 
-
-
-
-   /* About Section */
-   .ecoplus-about-section {
-    padding: 80px 0;
-    position: relative;
+ /* Efeitos de scroll */
+/* [data-scroll] {
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(30px);
 }
 
-.ecoplus-about-content {
-    position: relative;
-    padding-left: 30px;
+[data-scroll="in"] {
+    opacity: 1;
+    transform: translateY(0);
+} */
+
+
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
 }
 
-.ecoplus-about-content:before {
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+
+
+/* slideer top */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.carousel-slide::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 5px;
+    width: 100%;
     height: 100%;
-    background: #28a745;
-    border-radius: 5px 0 0 5px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.ecoplus-about-highlight {
-    background-color: rgba(40, 167, 69, 0.1);
-    border-left: 4px solid #28a745;
-    padding: 20px;
-    margin: 30px 0;
-    border-radius: 0 8px 8px 0;
+.carousel-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 10;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+.carousel-nav button {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-nav button:hover {
+    background: rgba(255, 255, 255, 0.7);
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.carousel-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease;
+}
+
+.carousel-content h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease 0.3s forwards;
+    opacity: 0;
+}
+
+.carousel-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease 0.6s forwards;
+    opacity: 0;
+}
+
+.carousel-content .btn {
+    animation: fadeIn 1s ease 0.9s forwards;
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    .carousel-content h2 {
+        font-size: 2rem;
+    }
+    
+    .carousel-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-content p {
+        font-size: 1rem;
+    }
+    
+    .carousel-nav button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
 }
 
 
-.progress-bar-verde {
-    background-color: #28a745; /* Verde do Bootstrap */
-    height: 10px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* About Section */
+/* Sobre Ecoplus - Carrossel */
+.company-logo-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 300px;
+    
 }
 
-.titulo-com-barra {
-    margin-bottom: 5px;
+.company-logo-container img {
+     max-height: 300px; 
+     max-width: 400px;
+    width: auto;
+    margin-right: 40px;
+}
+
+.about-content h2 {
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: white;
+}
+.about-content {
+    padding: 30px;
+    color:  white;
+    background: #2e7d32;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 
@@ -61,72 +253,378 @@ Author URL: http://w3layouts.com
 
 
 
+/* values section */
+.section-agriculture {
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                url("/api/placeholder/1200/800") center/cover no-repeat;
+    padding: 80px 0;
+  }
+  
+  .mission-vision {
+    border-left: 4px solid #2E7D32;
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .value-item {
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .value-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  .value-icon {
+    font-size: 2.5rem;
+    color: #2E7D32;
+    margin-bottom: 15px;
+  }
 
 
- /* Values Section */
- .ecoplus-values {
-    background-color: #f8f9fa;
+
+  .value-item {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    z-index: 1;
+  }
+  
+  .value-icon {
+    font-size: 2.5rem;
+    color: #2E7D32;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease;
+  }
+  
+  .top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #2E7D32;
+    transition: width 0.4s ease;
+  }
+  
+  .card-hover {
+    cursor: pointer;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .card-hover:hover .top-bar {
+    width: 100%;
+  }
+  
+  .card-hover:hover .value-icon {
+    transform: rotate(10deg) scale(1.2);
+  }
+  
+  .card-hover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.05) 0%, rgba(255, 255, 255, 0) 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+  
+  .card-hover:hover:before {
+    opacity: 1;
+  }
+
+
+  /* Seção Agricultura */
+.section-agriculture {
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                url("/assets/images/background-agriculture.jpg") center/cover no-repeat;
     padding: 80px 0;
 }
 
-
-
-.ecoplus-value-card {
-    background: white;
-    border-radius: 10px;
-    padding: 30px;
-    height: 100%;
+/* Caixas de Missão e Visão */
+.mission-box, .vision-box {
+    background-color: white;
+    border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
     transition: all 0.3s ease;
-    border-top: 3px solid transparent;
-    position: relative;
-    overflow: hidden;
+    border-top: 4px solid transparent;
 }
 
-.ecoplus-value-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    border-top-color: #28a745;
+.mission-box:hover, .vision-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.ecoplus-value-card:after {
+.mission-box {
+    border-color: #2E7D32;
+    margin-right: 15px; /* Espaço entre as caixas */
+}
+
+.vision-box {
+    border-color: #4CAF50;
+    margin-left: 15px; /* Espaço entre as caixas */
+}
+
+.mission-icon, .vision-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.mission-icon {
+    background-color: #2E7D32;
+}
+
+.vision-icon {
+    background-color: #4CAF50;
+}
+
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+    .mission-box, .vision-box {
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* Mantenha os estilos existentes para os valores */
+.value-item {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    color: #2E7D32;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease;
+}
+
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: #2E7D32;
+    transition: width 0.4s ease;
+}
+
+.card-hover {
+    cursor: pointer;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-hover:hover .top-bar {
+    width: 100%;
+}
+
+.card-hover:hover .value-icon {
+    transform: rotate(10deg) scale(1.2);
+}
+
+.card-hover:before {
     content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #28a745, #5cb85c);
+    height: 100%;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.05) 0%, rgba(255, 255, 255, 0) 60%);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.4s ease;
+    z-index: -1;
 }
 
-/* .ecoplus-section-subtitle:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: #28a745;
-} */
-
-.ecoplus-value-card:hover:after {
+.card-hover:hover:before {
     opacity: 1;
 }
 
-.ecoplus-value-icon {
-    font-size: 2.5rem;
-    color: #28a745;
-    margin-bottom: 1.5rem;
-    transition: all 0.3s;
-}
+  /* Estilos para o carrossel */
+#agricultureCarousel {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .carousel-inner {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* Garante que todas as imagens tenham a mesma altura */
+  .ratio-16x9 {
+    aspect-ratio: 16/9;
+  }
+  
+  /* Remove qualquer espaçamento extra */
+  .carousel {
+    padding: 0;
+    margin: 0;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .card-hover:active .value-icon {
+    animation: pulse 0.5s ease;
+  }
+  
 
-.ecoplus-value-card:hover .ecoplus-value-icon {
-    transform: scale(1.1);
-}
 
+
+/* Team */
+      /* Estilos específicos para esta seção */
+      .team-section {
+        padding: 80px 0;
+        background-color: #ffffff;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    .team-header {
+        color: #83925B;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    
+    .team-title {
+        color: #333;
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+    
+    .team-description {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.8;
+        margin-bottom: 40px;
+    }
+    
+    .team-btn {
+        background-color: #39B54A;
+        color: white;
+        font-weight: 600;
+        padding: 12px 30px;
+        border-radius: 0;
+        transition: all 0.3s ease;
+        border: none;
+        font-size: 16px;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .team-btn:hover {
+        background-color: #2d9d3c;
+        color: white;
+    }
+    
+    .team-member {
+        position: relative;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+    
+    .member-img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+    
+    .member-info {
+        margin-top: 15px;
+    }
+    
+    .member-name {
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 5px;
+        font-size: 24px;
+    }
+    
+    .member-position {
+        color: #666;
+        font-size: 16px;
+    }
+    
+    .social-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(57, 181, 74, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .team-member:hover .social-overlay {
+        opacity: 1;
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        color: #39B54A;
+        text-decoration: none;
+    }
+    
+    .social-icon:hover {
+        transform: translateY(-5px);
+        background-color: #f0f0f0;
+    }
+    
+    @media (max-width: 991px) {
+        .content-col {
+            margin-bottom: 40px;
+        }
+    }
 
 
 
@@ -160,163 +658,366 @@ Author URL: http://w3layouts.com
         float: left;
         line-height: 1.2;
     }
-    
+
+   
 
 
 
      /* Models Section */
      .ecoplus-models {
         padding: 80px 0;
-        background-color: #f8f9fa;
-    }
-    
-    .ecoplus-model-card {
-        background: white;
-        border-radius: 10px;
-        padding: 30px;
-        height: 100%;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s;
-        text-align: center;
         position: relative;
-        overflow: hidden;
     }
     
-    .ecoplus-model-card:before {
+    .ecoplus-section-subtitle {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        display: block;
+        text-transform: uppercase;
+    }
+    
+    .ecoplus-section-title {
+        font-size: 38px;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+    
+    .title-underline {
+        border-bottom: 2px solid #2e7d32;
+        padding-bottom: 8px;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .title-underline:after {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
+        width: 30%;
+        height: 2px;
+        background-color: #2e7d32;
+        bottom: -2px;
+        left: 35%;
+        transition: all 0.3s ease;
+    }
+    
+    .ecoplus-section-title:hover .title-underline:after {
         width: 100%;
-        height: 5px;
-        background: linear-gradient(90deg, #28a745, #5cb85c);
-        opacity: 0;
-        transition: opacity 0.3s;
+        left: 0;
     }
     
-    .ecoplus-model-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-    
-    .ecoplus-model-card:hover:before {
-        opacity: 1;
-    }
-    
-    .ecoplus-model-icon {
-        font-size: 2.5rem;
-        color: #28a745;
-        margin-bottom: 1.5rem;
-        transition: all 0.3s;
-    }
-    
-    .ecoplus-model-card:hover .ecoplus-model-icon {
-        transform: rotate(15deg) scale(1.1);
+    .section-description {
+        font-size: 18px;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #555;
     }
 
 
 
 
-
-
-         /* Team Section - Enhanced Small Cards with requested gradient bar */
-         .team-section {
-            padding: 80px 0;
-            position: relative;
+         /* Estilos personalizados */
+        :root {
+            --agro-primary: #4CAF50;
+            --agro-secondary: #8BC34A;
+            --agro-light: #C8E6C9;
+            --agro-dark: #2E7D32;
         }
         
-        /* Ajuste solicitado para a barra gradient acima da seção Team */
-        .team-section::before {
-            content: '';
-            position: absolute;
+        .progress-container {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 20px;
-            background: linear-gradient(90deg, #2e7d32, #ff8f00);
-        }
-        
-        .team-header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-top: 20px; /* Adicionado para compensar a barra gradient */
-        }
-        
-        .team-header h2 {
-            color: #2e7d32;
-            margin-bottom: 10px;
-        }
-        
-        .team-header .subtitle {
-            color: #ff8f00;
-            font-weight: 600;
-            margin-bottom: 20px;
-            display: block;
-        }
-        
-        .team-member {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .member-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #ff8f00;
-            margin: 0 auto 20px;
-        }
-        
-        .member-info h4 {
-            color: #2e7d32;
-            margin-bottom: 5px;
-        }
-        
-        .member-info .position {
-            color: #ff8f00;
-            font-weight: 600;
-            margin-bottom: 15px;
-            display: block;
-            font-size: 14px;
-        }
-        
-        .member-social {
+            height: 100vh;
+            background-color: #F1F8E9;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            margin-top: 15px;
-        }
-        
-        .member-social a {
-            width: 35px;
-            height: 35px;
-            background: #ff8f00;
-            color: white;
-            border-radius: 50%;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 5px;
-            transition: all 0.3s ease;
-            font-size: 14px;
+            z-index: 9999;
+            transition: opacity 1s ease-out;
         }
         
-        .member-social a:hover {
-            background-color: #ff8f00;
-            transform: translateY(-3px);
+        .agro-progress {
+            height: 25px;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 25px;
+            overflow: hidden;
+            background-color: var(--agro-light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
+        .agro-progress-bar {
+            background: linear-gradient(90deg, var(--agro-secondary), var(--agro-primary));
+            background-size: 200% 100%;
+            animation: gradient 3s ease infinite;
+            height: 100%;
+            width: 100%;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 2s ease-out;
+        }
+        
+        .progress-text {
+            color: var(--agro-dark);
+            font-weight: bold;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        
+        /* Animação de folhas */
+        .leaf {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0;
+            animation: falling linear forwards;
+            z-index: 100;
+        }
+        
+        /* Animações */
+        @keyframes falling {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Conteúdo do site (inicialmente oculto) */
+        .site-content {
+            display: none;
+            width: 100%;
+        }
+        
+        /* Efeito de carregamento concluído */
+        .loaded .agro-progress-bar {
+            transform: scaleX(1);
+            background: var(--agro-primary);
+            animation: none;
+        }
+        
+        .loaded .progress-text::after {
+            content: "✓";
+            margin-left: 10px;
+            color: var(--agro-dark);
+        }
 
+
+
+           /* Simulação de carregamento com CSS puro */
+           .agro-progress-bar {
+            animation: loadProgress 8s forwards;
+        }
+        
+        @keyframes loadProgress {
+            0% { transform: scaleX(0); }
+            20% { transform: scaleX(0.2); }
+            40% { transform: scaleX(0.4); }
+            60% { transform: scaleX(0.6); }
+            80% { transform: scaleX(0.8); }
+            100% { transform: scaleX(1); }
+        }
+        
+        /* Mudar textos durante o carregamento */
+        @keyframes changeText {
+            0% { content: "Preparando o solo..."; }
+            20% { content: "Plantando sementes..."; }
+            40% { content: "Regando as plantas..."; }
+            60% { content: "Adubando o terreno..."; }
+            80% { content: "Colhendo resultados..."; }
+            100% { content: "Pronto!"; }
+        }
+        
+        #progressText::after {
+            content: "Preparando o solo...";
+            animation: changeText 8s steps(1) forwards;
+        }
+        
+        /* Ao final da animação, mostrar conteúdo */
+        @keyframes showContent {
+            to { 
+                opacity: 0;
+                display: none;
+            }
+        }
+        
+        #progressContainer {
+            animation: hideLoader 0.5s 8s forwards;
+        }
+        
+        @keyframes hideLoader {
+            to { 
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        #siteContent {
+            animation: showContent 0.5s 8.5s forwards reverse;
+        }
+
+
+
+
+
+
+    
+    
+    /* Estilos dos Cards */
+
+    
+    .ecoplus-card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        height: 100%;
+        transform: translateY(0);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        padding: 30px 25px;
+    }
+    
+    .ecoplus-card:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: linear-gradient(to top, rgba(46, 125, 50, 0.08), transparent);
+        transition: all 0.4s ease;
+        z-index: 0;
+    }
+    
+    .ecoplus-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(46, 125, 50, 0.2);
+    }
+    
+    .ecoplus-card:hover:before {
+        height: 100%;
+    }
+    
+    .card-icon-wrapper {
+        margin-bottom: 25px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .card-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: rgba(46, 125, 50, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        transition: all 0.3s ease;
+    }
+    
+    .card-icon i {
+        font-size: 32px;
+        color: #2e7d32;
+        transition: all 0.3s ease;
+    }
+    
+    .ecoplus-card:hover .card-icon {
+        background-color: #2e7d32;
+        transform: rotateY(180deg);
+    }
+    
+    .ecoplus-card:hover .card-icon i {
+        color: white;
+        transform: rotateY(180deg);
+    }
+    
+    .card-content {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .card-title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+    
+    .ecoplus-card:hover .card-title {
+        color: #2e7d32;
+    }
+    
+    .card-text {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 20px;
+    }
+    
+    .card-link {
+        color: #2e7d32;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    
+    .card-link i {
+        margin-left: 5px;
+        transition: all 0.3s ease;
+    }
+    
+    .ecoplus-card:hover .card-link {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .ecoplus-card:hover .card-link i {
+        transform: translateX(5px);
+    }
+    
+    /* Animações para entrada */
+    [data-aos="fade-up"] {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+    
+    [data-aos="fade-up"].aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    @media (max-width: 767px) {
+        .ecoplus-card {
+            margin-bottom: 30px;
+        }
+        
+        .ecoplus-section-title {
+            font-size: 30px;
+        }
+    }
+
+       
 
         /* Advantages Section */
         .ecoplus-advantages {
@@ -328,7 +1029,8 @@ Author URL: http://w3layouts.com
         }
 
         .ecoplus-section-title{
-            color:  #ff8f00;
+            color:  #888888;
+            font-size: 20px;
         }
         
         .ecoplus-advantage-item {
@@ -360,53 +1062,53 @@ Author URL: http://w3layouts.com
         /* asjdnsajdkjadkjdbkdjbaskhbj,as */
 
 
-       /* Estilos para a seção de parceiros */
+  /* Estilos para a seção de parceiros */
 .partners-section {
     padding: 4rem 0;
     background-color: #f9f9f9;
-  }
-  
-  .containere {
+}
+
+.containere {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-  }
-  
-  .section-title {
+}
+
+.section-title {
     text-align: center;
     font-size: 2.2rem;
     color: #2e7d32;
     margin-bottom: 1rem;
     position: relative;
-  }
-  
-  .section-title::after {
+}
+
+.section-title::after {
     content: '';
     display: block;
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #2e7d32, #ff8f00);
+    background: #2e7d32; /* Alterado para cor sólida */
     margin: 0.5rem auto;
-  }
-  
-  .section-intro {
+}
+
+.section-intro {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 3rem;
     font-size: 1.1rem;
     color: #555;
     line-height: 1.6;
-  }
-  
-  .partner-list {
+}
+
+.partner-list {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     max-width: 900px;
     margin: 0 auto;
-  }
-  
-  .partner-item {
+}
+
+.partner-item {
     position: relative;
     background: white;
     border-radius: 8px;
@@ -414,82 +1116,84 @@ Author URL: http://w3layouts.com
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-  }
-  
-  .partner-item:hover {
+}
+
+.partner-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  }
-  
-  .partner-gradient {
+}
+
+.partner-gradient {
     width: 8px;
-    background: linear-gradient(to bottom, #2e7d32, #ff8f00);
+    background: #2e7d32; /* Alterado para cor sólida */
     flex-shrink: 0;
-  }
-  
-  .partner-content {
+}
+
+.partner-content {
     padding: 1.8rem;
     flex-grow: 1;
-  }
-  
-  .partner-title {
+}
+
+.partner-title {
     color: #2e7d32;
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
     position: relative;
     display: inline-block;
-  }
-  
-  .partner-title::after {
+}
+
+.partner-title::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: -5px;
     width: 50px;
     height: 2px;
-    background-color: #ff8f00;
-  }
-  
-  .partner-description {
+    background-color: #2e7d32; /* Alterado para cor sólida */
+}
+
+.partner-description {
     color: #666;
     line-height: 1.6;
     margin: 0;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
     .section-title {
-      font-size: 1.8rem;
+        font-size: 1.8rem;
     }
     
     .partner-item {
-      flex-direction: column;
+        flex-direction: column;
     }
     
     .partner-gradient {
-      width: 100%;
-      height: 6px;
-      background: linear-gradient(to right, #2e7d32, #ff8f00);
+        width: 100%;
+        height: 6px;
+        background: #2e7d32; /* Alterado para cor sólida */
     }
     
     .partner-content {
-      padding: 1.5rem;
+        padding: 1.5rem;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .partners-section {
-      padding: 3rem 0;
+        padding: 3rem 0;
     }
     
     .section-title {
-      font-size: 1.6rem;
+        font-size: 1.6rem;
     }
     
     .partner-title {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  }
+}
+
+
 
 
 
@@ -512,11 +1216,11 @@ Author URL: http://w3layouts.com
 }
 
 .esg-card h3{
-    color: #ff8f00;
+    color: #2e7d32;
 }
 
 .esg-card .fas{
-    color: #ff8f00;
+    color: white;
 }
 
 .esg-card p{
@@ -21001,5 +21705,111 @@ p.copy-footer-29 {
     color: var(--secondary-color); 
 }
  
+
+
+/*  */
+
+
+/* Animação de Scroll */
+[data-scroll] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+[data-scroll].visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeitos específicos para diferentes tipos de animação */
+[data-scroll="fade-in"] {
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+
+[data-scroll="fade-in"].visible {
+    opacity: 1;
+}
+
+[data-scroll="fade-up"] {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+[data-scroll="fade-up"].visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-scroll="fade-down"] {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 0.6s ease-out;
+}
+
+[data-scroll="fade-down"].visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-scroll="slide-left"] {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease-out;
+}
+
+[data-scroll="slide-left"].visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[data-scroll="slide-right"] {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease-out;
+}
+
+[data-scroll="slide-right"].visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[data-scroll="slide-up"] {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+[data-scroll="slide-up"].visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay para animações */
+[data-scroll-delay="200"] {
+    transition-delay: 0.2s;
+}
+
+[data-scroll-delay="400"] {
+    transition-delay: 0.4s;
+}
+
+[data-scroll-delay="600"] {
+    transition-delay: 0.6s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
